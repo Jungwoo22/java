@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="size"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="size"/>
+			<item value="article"/>
+			<item value="사람"/>
+			<item value="휴먼"/>
+			<item value="상람"/>
+			<item value="말하다"/>
+			<item value="사람람"/>
+			<item value="첫째무기"/>
+			<item value="종류"/>
+			<item value="칼"/>
+			<item value="활"/>
+			<item value="무기"/>
+		</list>
+		<list key="replacehistory">
+			<item value="text"/>
+			<item value="사람람"/>
+			<item value="상람"/>
+			<item value="삼람"/>
+			<item value="사람"/>
+			<item value="휴먼"/>
+			<item value="인간"/>
+			<item value="뻐끔거리다"/>
+			<item value="물고기"/>
+			<item value="현재사용무기"/>
+			<item value="첫째무기"/>
+			<item value="컬"/>
+			<item value="활활"/>
+			<item value="무무"/>
+			<item value="칼칼"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="642"/>
+		<item key="DIALOG_Y_ORIGIN" value="222"/>
+		<item key="DIALOG_WIDTH" value="340"/>
+		<item key="DIALOG_HEIGHT" value="454"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+	</section>
+</section>

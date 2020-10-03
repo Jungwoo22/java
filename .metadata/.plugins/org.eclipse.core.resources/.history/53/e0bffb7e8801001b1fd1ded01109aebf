@@ -1,0 +1,19 @@
+package chap01;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Util {
+	public static String getNowDateStr() {
+		SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		
+		Date time = new Date();
+		
+		String time1 = format1.format(time);
+//		return format1.format(time); 일케하면 바로 나옴
+		
+		System.out.println(format1);
+		System.out.println(time);
+		System.out.println(time1);
+	}
+}
