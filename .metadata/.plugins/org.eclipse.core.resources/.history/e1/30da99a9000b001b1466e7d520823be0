@@ -217,10 +217,9 @@ public class App {
 			if(member.loginId.contentEquals(loginId)) {
 				return i;
 			}
-			i++;
 		}
 		
-		return -1;
+		return 0;
 	}
 
 	private void makeTestData() {

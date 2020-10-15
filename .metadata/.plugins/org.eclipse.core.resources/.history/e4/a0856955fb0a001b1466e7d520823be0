@@ -5,16 +5,13 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.first.dto.Article;
-import com.first.dto.Member;
 import com.first.util.Util;
 
 public class App {
 	private List<Article> articles;
-	private List<Member> members;
 
 	public App() {
 		articles = new ArrayList<>();
-		members = new ArrayList<>();
 	}
 
 	public int getArticleIndexById(int id) {
@@ -79,15 +76,18 @@ public class App {
 				}
 
 				List<Article> forListArticles = articles;
+
 				String searchKeyword = command.substring("article list".length()).trim();
 
 				if (searchKeyword.length() > 0) {
 					forListArticles = new ArrayList<>();
+
 					for (Article article : articles) {
 						if (article.title.contains(searchKeyword)) {
 							forListArticles.add(article);
 						}
 					}
+
 					if (forListArticles.size() == 0) {
 						System.out.println("검색결과가 존재하지 않습니다.");
 						continue;
@@ -150,47 +150,6 @@ public class App {
 
 				articles.remove(foundIndex);
 				System.out.printf("%d번째 게시물이 삭제되었습니다.\n", id);
-			} else if (command.contentEquals("member join")) {
-				int id = members.size() + 1;
-				String regDate = Util.getNowDateStr();
-				
-				String loginId = null;
-				
-				while (true) {
-					System.out.print("로그인 아이디) ");
-					loginId = sc.nextLine();
-					
-					if (isJoinableLoginId(loginId) == false) {
-						System.out.printf("%s는(은) 이미 사용중인 아이디 입니다.\n", loginId);
-						continue;
-					}
-					break;
-				}
-				
-				String loginPw = null;
-				String loginPwConfirm = null;
-				
-				while (true) {
-					System.out.print("로그인 비번) ");
-					loginPw = sc.nextLine();
-					System.out.print("로그인 비번확인) ");
-					loginPwConfirm = sc.nextLine();
-					
-					if (loginPw.equals(loginPwConfirm) == false) {
-						System.out.println("비밀번호를 다시 입력해주세요");
-						continue;
-					}
-					
-					break;
-				}
-				
-				System.out.print("이름) ");
-				String name = sc.nextLine();
-
-				Member member = new Member(id, regDate, loginId, loginPw, name);
-				members.add(member);
-
-				System.out.printf("%d번 회원이 생성되었습니다. 환영합니다.\n", id);
 			} else {
 				System.out.printf("%s은(는) 존재하지 않는 명령어입니다.\n", command);
 			}
@@ -199,28 +158,6 @@ public class App {
 		sc.close();
 
 		System.out.println("==프로그램 끝==");
-	}
-
-	private boolean isJoinableLoginId(String loginId) {
-		int index = getMemberIndexByLoginId(loginId);
-		
-		if (index == -1) {
-			return true;
-		}
-		
-		return false;
-	}
-
-	private int getMemberIndexByLoginId(String loginId) {
-		int i = 0;
-		for (Member member : members) {
-			if(member.loginId.contentEquals(loginId)) {
-				return i;
-			}
-			i++;
-		}
-		
-		return -1;
 	}
 
 	private void makeTestData() {

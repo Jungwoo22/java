@@ -1,6 +1,8 @@
 package com.first.dto;
 
-public class Article extends Dto {
+public class Member {
+	public int id;
+	public String regDate;
 	public String title;
 	public String body;
 	public int hit;
